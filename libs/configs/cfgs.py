@@ -44,7 +44,7 @@ F: 0.848105701914
 """
 
 # root path
-ROOT_PATH = os.path.abspath(r'C:\Users\yangxue\Documents\GitHub\R-DFPN_FPN_Tensorflow')
+ROOT_PATH = os.path.abspath(r'/home/ai-i-hanmingfei/proj/R-DFPN_FPN_Tensorflow')
 
 # pretrain weights path
 TEST_SAVE_PATH = ROOT_PATH + '/tools/test_result'
@@ -63,7 +63,7 @@ ANCHOR_RATIOS = [1/5., 5., 1/7., 7., 1/9, 9]
 ANCHOR_ANGLES = [-90, -75, -60, -45, -30, -15]
 SCALE_FACTORS = [10., 10., 5., 5., 5.]
 SHORT_SIDE_LEN = 600
-DATASET_NAME = 'ship'  # 'ship', 'spacenet', 'pascal', 'coco'
+DATASET_NAME = 'dota'  # 'ship', 'spacenet', 'pascal', 'coco', "dota
 NUM_RECT_PARAMETERS = 5
 IOU_USE_GPU = True
 NMS_USE_GPU = True
