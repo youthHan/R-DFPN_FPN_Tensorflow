@@ -30,7 +30,7 @@ def train():
 
         with tf.name_scope('get_batch'):
             img_name_batch, img_batch, gtboxes_and_label_batch, num_objects_batch = \
-                next_batch(dataset_name=cfgs.DATASET_NAME,   # 'ship', 'spacenet', 'pascal', 'coco'
+                next_batch(dataset_name=cfgs.DATASET_NAME,   # 'ship', 'spacenet', 'pascal', 'dota', 'vedia'
                            batch_size=cfgs.BATCH_SIZE,
                            shortside_len=cfgs.SHORT_SIDE_LEN,
                            is_training=True)
@@ -232,7 +232,7 @@ def train():
         saver = tf.train.Saver(max_to_keep=10)
 
         config = tf.ConfigProto()
-        # config.gpu_options.per_process_gpu_memory_fraction = 0.5
+        # config.gpu_options.per_process_gpu_memory_fraction = 1
         config.gpu_options.allow_growth = True
 
         with tf.Session(config=config) as sess:
@@ -260,7 +260,8 @@ def train():
 
                 end = time.time()
 
-                if step % 10 == 0:
+                # if step % 10 == 0:
+                if True:
 
                     print(""" {}: step{}    image_name:{} |\t
                           rpn_loc_loss:{} |\t rpn_cla_loss:{} |\t rpn_total_loss:{} |

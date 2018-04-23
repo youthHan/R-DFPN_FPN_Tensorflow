@@ -27,7 +27,7 @@ from libs.box_utils import nms_rotate
 
 RESTORE_FROM_RPN = False
 FLAGS = get_flags_byname(cfgs.NET_NAME)
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
 def test(img_num):
@@ -209,7 +209,7 @@ def test(img_num):
 
 
 if __name__ == '__main__':
-    img_num = 200
+    img_num = 5187
     test(img_num)
 
 

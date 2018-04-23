@@ -13,6 +13,9 @@ from libs.box_utils.show_box_in_tensor import *
 from libs.losses import losses
 from libs.configs import cfgs
 from libs.box_utils import boxes_utils
+
+from help_utils.help_utils import print_tensors
+
 DEBUG = True
 
 
@@ -453,7 +456,12 @@ class RPN(object):
             tf.summary.image('/negative_anchors', negative_anchors_in_img)
 
             minibatch_boxes_softmax_scores = tf.gather(slim.softmax(self.rpn_scores), minibatch_indices)
-            top_k_scores, top_k_indices = tf.nn.top_k(minibatch_boxes_softmax_scores[:, 1], k=20)
+
+            # print_tensors(minibatch_boxes_softmax_scores, "minibatch_boxes_softmax_scores")
+            last_dim_num = tf.shape(minibatch_boxes_softmax_scores)[-2]
+            k_shown = tf.minimum(20, last_dim_num)
+            # print(k_shown, last_dim_num)
+            top_k_scores, top_k_indices = tf.nn.top_k(minibatch_boxes_softmax_scores[:, 1], k=k_shown)
 
             top_k_boxes = tf.gather(minibatch_decode_boxes, top_k_indices)
             top_detections_in_img = draw_boxes_with_scores(self.img_batch,

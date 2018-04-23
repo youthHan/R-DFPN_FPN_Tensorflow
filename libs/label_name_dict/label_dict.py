@@ -56,6 +56,21 @@ elif cfgs.DATASET_NAME == 'dota':
         'soccer-ball-field': 14,
         'swimming-pool': 15
     }
+elif cfgs.DATASET_NAME == 'vedia':
+    NAME_LABEL_MAP = {
+        'back_ground': 0,
+        '1': 1,
+        '2': 2,
+        '4': 3,
+        '5': 4,
+        '7': 5,
+        '8': 6,
+        '9': 7,
+        '10': 8,
+        '11': 9,
+        '23': 10,
+        '31': 11
+    }
 else:
     assert 'please set label dict!'
 

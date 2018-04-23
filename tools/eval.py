@@ -24,7 +24,7 @@ from tools import restore_model
 from libs.box_utils import iou_rotate
 from libs.box_utils import nms_rotate
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
 def make_dict_packle(_gtboxes_and_label, _fast_rcnn_decode_boxes, _fast_rcnn_score, _detection_category):

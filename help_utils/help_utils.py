@@ -103,7 +103,7 @@ def print_tensors(tensor, tensor_name):
 
     def np_print(ary):
         ary = ary + np.zeros_like(ary)
-        print(tensor_name + ':', ary)
+        # print(tensor_name + ':', ary)
 
         print('shape is: ',ary.shape)
         print(10*"%%%%%")
